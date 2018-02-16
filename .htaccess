@@ -247,3 +247,7 @@
         Deny from all
 
     </Files>
+        
+###########################################
+## Enable/Disbale Developer Mode
+SetEnv MAGE_IS_DEVELOPER_MODE "true"
