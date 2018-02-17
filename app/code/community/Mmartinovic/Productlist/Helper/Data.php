@@ -41,7 +41,8 @@ class Mmartinovic_Productlist_Helper_Data extends Mage_Core_Helper_Abstract
     {
         return array(
             // attribute name => label to be used
-            'price' => $this->__('Price')
+            'price' => $this->__('Price'),
+						'sort_order' => $this->__('Sort Order')
         );
     }
 
@@ -65,7 +66,7 @@ class Mmartinovic_Productlist_Helper_Data extends Mage_Core_Helper_Abstract
 
         Mage::getSingleton('catalog/product_status')->addVisibleFilterToCollection($collection);
         Mage::getSingleton('catalog/product_visibility')->addVisibleInCatalogFilterToCollection($collection);
-
+				
         return $collection;
     }
 
