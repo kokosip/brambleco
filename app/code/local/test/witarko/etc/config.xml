@@ -1,0 +1,18 @@
+<config>    
+    <modules>
+        <test_witarko>
+            <version>0.1.0</version>
+        </test_witarko>
+    </modules>
+		<frontend>
+        <routers>
+            <witarko>
+                <use>standard</use>
+                <args>
+                  <module>test_witarko</module>
+                  <frontName>witarko</frontName>
+                </args>
+            </witarko>
+        </routers>  
+    </frontend>
+</config>

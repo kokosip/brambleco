@@ -1,0 +1,8 @@
+<config>
+    <modules>
+        <test_witarko>
+            <active>true</active>
+            <codePool>local</codePool>
+        </test_witarko>
+    </modules>
+</config>
