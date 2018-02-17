@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>    
+    <modules>
+        <testing_witarkotesting>
+            <version>0.1.0</version>
+        </testing_witarkotesting>
+    </modules>
+		<global>
+        <!-- We need model -->
+        <models>
+            <testing_witarkotesting>
+                <class>testing_witarkotesting_Model</class>
+            </testing_witarkotesting>
+        </models>
+        <!-- We need helper -->
+        <helpers>
+            <testing_witarkotesting>
+                <class>testing_witarkotesting_Helper</class>
+            </testing_witarkotesting>
+        </helpers>
+		</global>
+		<frontend>
+		<!-- We need custom layout updates file -->
+        <layout>
+						<updates>
+                <testing_witarkotesting>
+                    <file>mmartinovic_productlist.xml</file>
+                </testing_witarkotesting>
+            </updates>
+				</layout>
+        <routers>
+            <witarkotesting>
+                <use>standard</use>
+                <args>
+                  <module>testing_witarkotesting</module>
+                  <frontName>witarkotesting</frontName>
+                </args>
+            </witarkotesting>
+        </routers>  
+    </frontend>
+</config>
