@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <config>
     <modules>
         <Mmartinovic_Productlist>
@@ -7,13 +6,11 @@
         </Mmartinovic_Productlist>
     </modules>
     <global>
-        <!-- We need model -->
         <models>
             <mmartinovic_productlist>
                 <class>Mmartinovic_Productlist_Model</class>
             </mmartinovic_productlist>
         </models>
-        <!-- We need helper -->
         <helpers>
             <mmartinovic_productlist>
                 <class>Mmartinovic_Productlist_Helper</class>
@@ -21,8 +18,6 @@
         </helpers>
     </global>
     <frontend>
-        <!-- We need custom layout updates file -->
-        <!--
         <layout>
             <updates>
                 <mmartinovic_productlist>
@@ -30,8 +25,6 @@
                 </mmartinovic_productlist>
             </updates>
         </layout>
-        -->
-        <!-- We need custom front name for standard router -->
         <routers>
             <mmartinovic_productlist>
                 <use>standard</use>

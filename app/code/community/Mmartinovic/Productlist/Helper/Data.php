@@ -24,7 +24,7 @@ class Mmartinovic_Productlist_Helper_Data extends Mage_Core_Helper_Abstract
     public function getProductCollection()
     {
         $rootCategoryId = Mage::app()->getStore()->getRootCategoryId();
-
+        echo "string";
         $collection = Mage::getModel('catalog/category')
             ->getProductCollection()
             ->addAttributeToSelect('*')

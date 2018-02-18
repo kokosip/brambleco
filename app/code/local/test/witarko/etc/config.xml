@@ -1,19 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<config>    
+<config>
     <modules>
         <Test_Witarko>
-            <version>0.1.0</version>
+            <version>0.0.1</version>
         </Test_Witarko>
     </modules>
-		<frontend>
+    <global>
+        <models>
+            <test_witarko>
+                <class>Test_Witarko_Model</class>
+            </test_witarko>
+        </models>
+        <helpers>
+            <test_witarko>
+                <class>Test_Witarko_Helper</class>
+            </test_witarko>
+        </helpers>
+    </global>
+    <frontend>
+        <layout>
+            <updates>
+                <test_witarko>
+                    <file>test_witarko.xml</file>
+                </test_witarko>
+            </updates>
+        </layout>
         <routers>
-            <witarko>
+            <test_witarko>
                 <use>standard</use>
                 <args>
-                  <module>Test_Witarko</module>
-                  <frontName>witarko</frontName>
+                    <module>Test_Witarko</module>
+                    <frontName>witarko</frontName>
                 </args>
-            </witarko>
-        </routers>  
+            </test_witarko>
+        </routers>
     </frontend>
 </config>
