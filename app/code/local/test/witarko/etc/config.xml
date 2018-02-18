@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <config>    
     <modules>
-        <test_witarko>
+        <Test_Witarko>
             <version>0.1.0</version>
-        </test_witarko>
+        </Test_Witarko>
     </modules>
 		<frontend>
         <routers>
             <witarko>
                 <use>standard</use>
                 <args>
-                  <module>test_witarko</module>
+                  <module>Test_Witarko</module>
                   <frontName>witarko</frontName>
                 </args>
             </witarko>
