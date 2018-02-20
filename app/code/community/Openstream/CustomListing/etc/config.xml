@@ -25,7 +25,7 @@
                 </custom_listing>
             </updates>
         </layout>
-				<routers>
+		<routers>
             <custom_listing>
                 <use>standard</use>
                 <args>
