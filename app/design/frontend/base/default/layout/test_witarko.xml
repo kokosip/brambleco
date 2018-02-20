@@ -29,7 +29,7 @@
                 </block> 
 
                 <action method="setToolbarBlockName">
-                    <name>product_list_toolbar</name>
+                    <name>produk_list_toolbar</name>
                 </action>
 
                 <action method="setCollection">
