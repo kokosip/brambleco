@@ -11,20 +11,21 @@
         </reference>
 
         <!-- Switch root template to 1 column
+         -->
         <reference name="root">
             <action method="setTemplate">
                 <template>page/1column.phtml</template>
             </action>
         </reference>
-         -->
 				<!--
-        <reference name="content"> 
 				-->
+        <reference name="content"> 
             <!-- Add product list to content 
-            <block type="catalog/product_list" name="product_list" template="catalog/product/list.phtml">
 						-->
+            <block type="catalog/product_list" name="product_list" template="catalog/product/list.phtml">
                 
                 <!-- comment this
+                -->
                 <block type="catalog/product_list_toolbar" name="product_list_toolbar" template="catalog/product/list/toolbar.phtml">
                     <block type="page/html_pager" name="product_list_toolbar_pager"/>
                 </block> 
@@ -36,9 +37,9 @@
                 <action method="setCollection">
                     <value helper="test_witarko/getProductCollection" />
                 </action>
-                -->
 
                 <!--
+                 -->
                 <action method="setAvailableOrders">
                     <value helper="test_witarko/getAvailableOrders" />
                 </action>
@@ -56,7 +57,6 @@
                 </action>
             </block>
         </reference>
-                 -->
     </test_witarko_index_index>
 
 </layout>
