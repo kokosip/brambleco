@@ -35,13 +35,13 @@
                 </action>
 
                 <action method="setCollection">
-                    <value helper="test_witarko/getProductCollection" />
+                    <value helper="witarko/getProductCollection" />
                 </action>
 
                 <!--
                  -->
                 <action method="setAvailableOrders">
-                    <value helper="test_witarko/getAvailableOrders" />
+                    <value helper="witarko/getAvailableOrders" />
                 </action>
 
                 <action method="setSortBy">

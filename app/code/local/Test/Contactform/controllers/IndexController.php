@@ -32,7 +32,7 @@
  * @author      Magento Core Team <core@magentocommerce.com>
  */
 require_once Mage::getModuleDir('controllers', 'Mage_Contacts').DS.'IndexController.php';
-class Save_Contactform_IndexController extends Mage_Contacts_IndexController
+class Test_Contactform_IndexController extends Mage_Contacts_IndexController
 {
 
     public function indexAction()

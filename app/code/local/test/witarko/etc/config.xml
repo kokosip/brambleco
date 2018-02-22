@@ -1,23 +1,65 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0"?>
 <config>
     <modules>
         <Test_Witarko>
-            <version>0.0.1</version>
+            <version>0.1.0</version>
         </Test_Witarko>
     </modules>
     <global>
+        <blocks>
+            <test_witarko>
+                <class>Test_Witarko_Block</class>
+            </test_witarko>
+        </blocks>
         <models>
-            <test_witarko>
+            <witarko>
                 <class>Test_Witarko_Model</class>
-            </test_witarko>
+                <resourceModel>witarko_resource</resourceModel>
+            </witarko>
+            <witarko_resource>
+                <class>Test_Witarko_Model_Resource</class>
+                <entities>
+                    <displaygrid>
+                        <table>contact_table</table>
+                    </displaygrid>
+                </entities>
+            </witarko_resource>
         </models>
+        <resources>
+            <test_witarko_setup>
+                <setup>
+                    <module>Test_Witarko</module>
+                </setup>
+            </test_witarko_setup>
+            <test_witarko_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </test_witarko_read>
+            <test_witarko_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </test_witarko_write>
+        </resources>
         <helpers>
-            <test_witarko>
+            <witarko>
                 <class>Test_Witarko_Helper</class>
-            </test_witarko>
+            </witarko>
         </helpers>
     </global>
-    <frontend>
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <test_witarko before="Mage_Adminhtml">Test_Witarko_Adminhtml</test_witarko>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+		<frontend>
         <layout>
             <updates>
                 <test_witarko>

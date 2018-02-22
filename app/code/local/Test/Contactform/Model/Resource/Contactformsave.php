@@ -6,7 +6,7 @@
  * Time: 15:57
  */
 
-class Save_Contactform_Model_Resource_Contactformsave extends Mage_Core_Model_Resource_Db_Abstract
+class Test_Contactform_Model_Resource_Contactformsave extends Mage_Core_Model_Resource_Db_Abstract
 {
     /***
      * Initialize resource model

@@ -1,8 +1,8 @@
 <?php
-class Display_Customgrid_Block_Adminhtml_Customgrid_Grid extends Mage_Adminhtml_Block_Widget_Grid {
+class Test_Witarko_Block_Adminhtml_Customgrid_Grid extends Mage_Adminhtml_Block_Widget_Grid {
 
     /**
-     * Display_Customgrid_Block_Adminhtml_Customgrid_Grid constructor.
+     * Test_Witarko_Block_Adminhtml_Customgrid_Grid constructor.
      */
 
     public function __construct()
@@ -16,7 +16,7 @@ class Display_Customgrid_Block_Adminhtml_Customgrid_Grid extends Mage_Adminhtml_
 
     protected function _prepareCollection()
     {
-        $collection = Mage::getModel('customgrid/displaygrid')->getCollection();
+        $collection = Mage::getModel('witarko/displaygrid')->getCollection();
         $this->setCollection($collection);
         return parent::_prepareCollection();
     }
@@ -24,37 +24,37 @@ class Display_Customgrid_Block_Adminhtml_Customgrid_Grid extends Mage_Adminhtml_
     protected function _prepareColumns()
     {
         $this->addColumn('contact_id', array(
-            'header'    => Mage::helper('customgrid')->__('Id'),
+            'header'    => Mage::helper('witarko')->__('Id'),
             'align'     =>'left',
             'index'     => 'contact_id',
         ));
 
         $this->addColumn('created_at', array(
-            'header'    => Mage::helper('customgrid')->__('Date'),
+            'header'    => Mage::helper('witarko')->__('Date'),
             'align'     =>'left',
             'index'     => 'created_at',
         ));
 
         $this->addColumn('name', array(
-            'header'    => Mage::helper('customgrid')->__('Name'),
+            'header'    => Mage::helper('witarko')->__('Name'),
             'align'     =>'left',
             'index'     => 'name',
         ));
 
         $this->addColumn('email', array(
-            'header'    => Mage::helper('customgrid')->__('Email'),
+            'header'    => Mage::helper('witarko')->__('Email'),
             'align'     =>'left',
             'index'     => 'email',
         ));
 
         $this->addColumn('telephone', array(
-            'header'    => Mage::helper('customgrid')->__('Telephone'),
+            'header'    => Mage::helper('witarko')->__('Telephone'),
             'align'     =>'left',
             'index'     => 'telephone',
         ));
 
         $this->addColumn('comment', array(
-            'header'    => Mage::helper('customgrid')->__('Description'),
+            'header'    => Mage::helper('witarko')->__('Description'),
             'width'     => '150px',
             'index'     => 'comment',
         ));

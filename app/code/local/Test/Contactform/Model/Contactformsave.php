@@ -6,7 +6,7 @@
  * Time: 15:57
  */
 
-class Save_Contactform_Model_Contactformsave extends Mage_Core_Model_Abstract
+class Test_Contactform_Model_Contactformsave extends Mage_Core_Model_Abstract
 {
     public function _construct()
     {
