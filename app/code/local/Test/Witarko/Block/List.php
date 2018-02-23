@@ -1,9 +1,13 @@
 <?php
-class Test_Witarko_Block_List extends Mage_Catalog_Block_Product_List
-{
-    protected $_itemCollection = null;
 
-    public function getProductCollection()
+class Test_Witarko_Block_List extends Mage_Catalog_Block_Product_Abstract
+{
+    public function getText()
+    {
+        return "I am inside `" . get_class(). "` block and it is my first custom block ever !";
+    }
+		
+		public function getProductCollection($sortOrder)
     {
         $rootCategoryId = Mage::app()->getStore()->getRootCategoryId();
 
@@ -13,12 +17,18 @@ class Test_Witarko_Block_List extends Mage_Catalog_Block_Product_List
             ->addAttributeToFilter(
                 'sort_order',
                 array('notnull' => false)
-            );
-
-
-        //Mage::getSingleton('catalog/product_status')->addVisibleFilterToCollection($collection);
-        //Mage::getSingleton('catalog/product_visibility')->addVisibleInCatalogFilterToCollection($collection);
+            )
+						->addAttributeToSort('sort_order', $sortOrder);
 				
         return $collection;
+    }
+		
+		public function addOrderToAvailableOrders()
+		{
+			return "lalal";
+		}
+		
+		public function getContactCollection()
+    {
     }
 }

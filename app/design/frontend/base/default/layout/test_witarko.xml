@@ -20,15 +20,15 @@
 				<!--
 				-->
         <reference name="content"> 
+						<block type="test_witarko/list" name="list" template="test_witarko/list.phtml">
             <!-- Add product list to content 
-						-->
             <block type="catalog/product_list" name="product_list" template="catalog/product/list.phtml">
+						-->
                 
-                <!-- comment this
-                -->
                 <block type="catalog/product_list_toolbar" name="product_list_toolbar" template="catalog/product/list/toolbar.phtml">
                     <block type="page/html_pager" name="product_list_toolbar_pager"/>
                 </block> 
+                <!-- comment this
 
                 <action method="setToolbarBlockName">
                     <name>produk_list_toolbar</name>
@@ -37,15 +37,23 @@
                 <action method="setCollection">
                     <value helper="witarko/getProductCollection" />
                 </action>
+								
+								<action method="addOrderToAvailableOrders" translate="label">
+									<code>sort_order</code>
+									<label>Sort Order</label>
+								</action>
+                -->
 
                 <!--
-                 -->
                 <action method="setAvailableOrders">
                     <value helper="witarko/getAvailableOrders" />
                 </action>
+                 -->
 
+								 <!--
+                 -->
                 <action method="setSortBy">
-                    <value>price</value>
+                    <value>sort_order</value>
                 </action>
 
                 <action method="setDefaultDirection">
@@ -55,7 +63,7 @@
                 <action method="setColumnCount">
                     <coulumn>5</coulumn>
                 </action>
-            </block>
+						</block> 
         </reference>
     </test_witarko_index_index>
 
