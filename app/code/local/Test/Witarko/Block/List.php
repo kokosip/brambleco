@@ -7,7 +7,7 @@ class Test_Witarko_Block_List extends Mage_Catalog_Block_Product_Abstract
         return "I am inside `" . get_class(). "` block and it is my first custom block ever !";
     }
 		
-		public function getProductCollection($sortOrder)
+	public function getProductCollection($sortOrder)
     {
         $rootCategoryId = Mage::app()->getStore()->getRootCategoryId();
 
@@ -18,17 +18,21 @@ class Test_Witarko_Block_List extends Mage_Catalog_Block_Product_Abstract
                 'sort_order',
                 array('notnull' => false)
             )
-						->addAttributeToSort('sort_order', $sortOrder);
-				
+			->addAttributeToSort('sort_order', $sortOrder);
         return $collection;
     }
 		
-		public function addOrderToAvailableOrders()
-		{
-			return "lalal";
-		}
+	public function addOrderToAvailableOrders()
+	{
+		return "lalal";
+	}
 		
-		public function getContactCollection()
-    {
-    }
+	public function getContactCollection()
+	{
+		$data = Mage::getModel('witarko/contact');
+		
+		$collection = $data->getCollection();
+		
+		return $collection;
+	}
 }

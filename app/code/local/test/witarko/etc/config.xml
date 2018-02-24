@@ -19,9 +19,9 @@
             <witarko_resource>
                 <class>Test_Witarko_Model_Resource</class>
                 <entities>
-                    <displaygrid>
+                    <contact>
                         <table>contact_table</table>
-                    </displaygrid>
+                    </contact>
                 </entities>
             </witarko_resource>
         </models>

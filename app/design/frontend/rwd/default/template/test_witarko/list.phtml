@@ -9,7 +9,6 @@
 <?php
     $_productCollection=$this->getProductCollection('ASC');
     $_helper = $this->helper('catalog/output');
-		$_contactCollection=$this->getContactCollection();
 ?>
 <?php if(!$_productCollection->count()): ?>
 <p class="note-msg"><?php echo $this->__('There are no products matching the selection.') ?></p>
@@ -92,27 +91,40 @@
 		.div-table-col {
 			float: left; /* fix for  buggy browsers */
 			display: table-column;         
-			width: 200px;         
+			width: 190px;         
+			background-color: #ccc;  
+		}
+		.div-table-id {
+			float: left; /* fix for  buggy browsers */
+			display: table-column;         
+			width: 150px;         
 			background-color: #ccc;  
 		}
 		</style>
 		<div class="div-table">
 			<div class="div-table-row">
-					<div class="div-table-col" align="center">Customer ID</div>
-					<div  class="div-table-col">Customer Name</div>
-					<div  class="div-table-col">Customer Address</div>
+					<div class="div-table-id" align="center">Contact ID</div>
+					<div  class="div-table-col">Created at</div>
+					<div  class="div-table-col">Name</div>
+					<div  class="div-table-col">Email</div>
+					<div  class="div-table-col">Telephone</div>
+					<div  class="div-table-col">Comment</div>
 			</div>
-			<?php //if(!$_contactCollection->count()): ?>
+			<?php $_contactCollection=$this->getContactCollection(); ?>
+			<?php if(!$_contactCollection->count()): ?>
 				<p class="note-msg"><?php echo $this->__('There are no products matching the selection.') ?></p>
-			<?php //else: ?>
-				<?php //$i=0; foreach ($_contactCollection as $_contact): ?>
+			<?php else: ?>
+				<?php $i=0; foreach ($_contactCollection as $_contact): ?>
 					<div class="div-table-row">
-						<div class="div-table-col">001</div>
-						<div class="div-table-col">002</div>
-						<div class="div-table-col">003</div>
+						<div class="div-table-id" align="center"><?php echo $_contact->getData('contact_id'); ?></div>
+						<div class="div-table-col"><?php echo $_contact->getData('created_at'); ?></div>
+						<div class="div-table-col"><?php echo $_contact->getData('name'); ?></div>
+						<div class="div-table-col"><?php echo $_contact->getData('email'); ?></div>
+						<div class="div-table-col"><?php echo $_contact->getData('telephone'); ?></div>
+						<div class="div-table-col"><?php echo $_contact->getData('comment'); ?></div>
 					</div>
-				<?php //endforeach ?>
-			<?php //endif; ?>
+				<?php endforeach ?>
+			<?php endif; ?>
 		</div>
 </div>
 
