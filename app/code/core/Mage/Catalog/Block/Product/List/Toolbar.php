@@ -476,6 +476,7 @@ class Mage_Catalog_Block_Product_List_Toolbar extends Mage_Core_Block_Template
         if (is_null($order)) {
             $order = $this->getCurrentOrder() ? $this->getCurrentOrder() : $this->_availableOrder[0];
         }
+		
         return $this->getPagerUrl(array(
             $this->getOrderVarName()=>$order,
             $this->getDirectionVarName()=>$direction,

@@ -7,7 +7,11 @@
 /* @var $this Mage_Catalog_Block_Product_List */
 ?>
 <?php
-    $_productCollection=$this->getProductCollection('ASC');
+	$order = 'asc';
+	if (isset($_GET['dir'])) { // Temporary fixed, need more exploration
+		$order = $_GET['dir'];
+	}
+    $_productCollection=$this->getProductCollection($order);
     $_helper = $this->helper('catalog/output');
 ?>
 <?php if(!$_productCollection->count()): ?>
@@ -69,60 +73,65 @@
     <script type="text/javascript">decorateGeneric($$('ul.products-grid'), ['odd','even','first','last'])</script>
     <?php endif; ?>
 
-    <div class="toolbar-bottom">
-        <button type="button" class="button btn-cart" onclick="<?php $_productCollection=$this->getProductCollection('DESC'); ?>"><span><span><?php echo $this->__('SORT ORDER') ?></span></span></button>
-    </div>
-		<?php echo "This is a custom table, \"Contact Table\""; ?>
-		<style>
-		.div-table {
-			display: table;         
-			width: auto;         
-			background-color: #eee;         
-			border: 1px solid #666666;         
-			border-spacing: 5px; /* cellspacing:poor IE support for  this */
-		}
-		.div-table-row {
-			display: table-row;
-			width: auto;
-			clear: both;
-		}
-		.div-table-col {
-			float: left; /* fix for  buggy browsers */
-			display: table-column;         
-			width: 190px;         
-			background-color: #ccc;  
-		}
-		.div-table-id {
-			float: left; /* fix for  buggy browsers */
-			display: table-column;         
-			width: 150px;         
-			background-color: #ccc;  
-		}
-		</style>
-		<div class="div-table">
-			<div class="div-table-row">
-					<div class="div-table-id" align="center">Contact ID</div>
-					<div  class="div-table-col">Created at</div>
-					<div  class="div-table-col">Name</div>
-					<div  class="div-table-col">Email</div>
-					<div  class="div-table-col">Telephone</div>
-					<div  class="div-table-col">Comment</div>
-			</div>
-			<?php $_contactCollection=$this->getContactCollection(); ?>
-			<?php if(!$_contactCollection->count()): ?>
-				<p class="note-msg"><?php echo $this->__('There are no products matching the selection.') ?></p>
-			<?php else: ?>
-				<?php $i=0; foreach ($_contactCollection as $_contact): ?>
-					<div class="div-table-row">
-						<div class="div-table-id" align="center"><?php echo $_contact->getData('contact_id'); ?></div>
-						<div class="div-table-col"><?php echo $_contact->getData('created_at'); ?></div>
-						<div class="div-table-col"><?php echo $_contact->getData('name'); ?></div>
-						<div class="div-table-col"><?php echo $_contact->getData('email'); ?></div>
-						<div class="div-table-col"><?php echo $_contact->getData('telephone'); ?></div>
-						<div class="div-table-col"><?php echo $_contact->getData('comment'); ?></div>
-					</div>
-				<?php endforeach ?>
-			<?php endif; ?>
+	<?php if($this->getCurrentDirection() == 'asc'): ?>
+		<input type="button" value="Sort Order" onclick="location='<?php echo $this->getOrderUrl(null, 'desc') ?>'" />
+	<?php else: ?>
+		<input type="button" value="Sort Order" onclick="location='<?php echo $this->getOrderUrl(null, 'asc') ?>'" />
+	<?php endif; ?>
+	<br />
+	<br />
+    
+	<?php echo "This is a custom table, \"Contact Table\""; ?>
+	<style>
+	.div-table {
+		display: table;         
+		width: auto;         
+		background-color: #eee;         
+		border: 1px solid #666666;         
+		border-spacing: 5px; /* cellspacing:poor IE support for  this */
+	}
+	.div-table-row {
+		display: table-row;
+		width: auto;
+		clear: both;
+	}
+	.div-table-col {
+		float: left; /* fix for  buggy browsers */
+		display: table-column;         
+		width: 190px;         
+		background-color: #ccc;  
+	}
+	.div-table-id {
+		float: left; /* fix for  buggy browsers */
+		display: table-column;         
+		width: 150px;         
+		background-color: #ccc;  
+	}
+	</style>
+	<div class="div-table">
+		<div class="div-table-row">
+			<div class="div-table-id" align="center">Contact ID</div>
+			<div  class="div-table-col">Created at</div>
+			<div  class="div-table-col">Name</div>
+			<div  class="div-table-col">Email</div>
+			<div  class="div-table-col">Telephone</div>
+			<div  class="div-table-col">Comment</div>
 		</div>
+		<?php $_contactCollection=$this->getContactCollection(); ?>
+		<?php if(!$_contactCollection->count()): ?>
+			<p class="note-msg"><?php echo $this->__('There are no products matching the selection.') ?></p>
+		<?php else: ?>
+			<?php $i=0; foreach ($_contactCollection as $_contact): ?>
+				<div class="div-table-row">
+					<div class="div-table-id" align="center"><?php echo $_contact->getData('contact_id'); ?></div>
+					<div class="div-table-col"><?php echo $_contact->getData('created_at'); ?></div>
+					<div class="div-table-col"><?php echo $_contact->getData('name'); ?></div>
+					<div class="div-table-col"><?php echo $_contact->getData('email'); ?></div>
+					<div class="div-table-col"><?php echo $_contact->getData('telephone'); ?></div>
+					<div class="div-table-col"><?php echo $_contact->getData('comment'); ?></div>
+				</div>
+			<?php endforeach ?>
+		<?php endif; ?>
+	</div>
 </div>
 

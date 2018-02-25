@@ -19,6 +19,10 @@
 		
         <reference name="content"> 
 			<block type="test_witarko/list" name="list" template="test_witarko/list.phtml">
+				<block type="test_witarko/button" name="button" template="test_witarko/button.phtml">
+				
+				</block>
+				
                 <action method="setColumnCount">
                     <coulumn>5</coulumn>
                 </action>
